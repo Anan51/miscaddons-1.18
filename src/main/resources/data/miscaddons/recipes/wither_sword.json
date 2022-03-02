@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    " # ",
+    "WS "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bone"
+    },
+    "W": {
+      "item": "miscaddons:wither_bone"
+    },
+    "S": {
+      "item": "minecraft:wither_skeleton_skull"
+        }
+    },
+  "result": {
+    "item": "miscaddons:wither_sword"
+  }
+}

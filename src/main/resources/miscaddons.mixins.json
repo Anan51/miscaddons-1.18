@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "corruptpumpkin.first.mod.mixin.entities",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "LivingEntityAccessor",
+    "InventoryMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "miscaddons",
+  "version": "${version}",
+
+  "name": "Miscellaneous Addons",
+  "description": "This is my very first mod!",
+  "authors": [
+    "CorruptPumpkin",
+    "PhxtBui"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/miscaddons/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "corruptpumpkin.first.mod.FirstMod"
+    ]
+  },
+  "mixins": [
+    "miscaddons.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

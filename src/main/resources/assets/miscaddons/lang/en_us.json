@@ -1,0 +1,10 @@
+{
+  "enchantment.firstmodenchants.wither": "Wither",
+  "enchantment.firstmodenchants.poison": "Poison",
+  "item.miscaddons.creeperheart": "Creeper Heart",
+  "item.miscaddons.wither_sword": "Wither Blade",
+  "item.miscaddons.WitherSwordToolTip": "This sword radiates fear...",
+  "item.miscaddons.wither_bone": "Wither Bone",
+  "itemGroup.miscaddons.Misc_Addon_Group": "Custom Items",
+  "item.miscaddons.jetpack": "JetPack"
+}
