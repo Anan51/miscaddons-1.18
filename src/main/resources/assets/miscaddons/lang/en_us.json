@@ -6,5 +6,8 @@
   "item.miscaddons.WitherSwordToolTip": "This sword radiates fear...",
   "item.miscaddons.wither_bone": "Wither Bone",
   "itemGroup.miscaddons.Misc_Addon_Group": "Custom Items",
-  "item.miscaddons.jetpack": "JetPack"
+  "item.miscaddons.jetpack": "JetPack",
+  "item.miscaddons.EnergyBoltItem": "Energy Bolt",
+  "item.miscaddons.snowball_cannon": "Snowball Cannon",
+  "item.miscaddons.energyball_cannon": "Energy Cannon"
 }

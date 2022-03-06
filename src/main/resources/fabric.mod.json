@@ -21,6 +21,9 @@
   "entrypoints": {
     "main": [
       "corruptpumpkin.first.mod.FirstMod"
+    ],
+    "client": [
+      "corruptpumpkin.first.mod.FirstModClient"
     ]
   },
   "mixins": [
