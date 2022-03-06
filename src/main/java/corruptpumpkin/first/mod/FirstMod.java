@@ -1,8 +1,8 @@
 package corruptpumpkin.first.mod;
 import CorruptPumpkin.First.Mod.FirstModEnchantments.PoisonEnchant;
+import corruptpumpkin.first.mod.Functionalities.CreeperHiss2;
 import corruptpumpkin.first.mod.Items.RegisterItems;
 import CorruptPumpkin.First.Mod.FirstModEnchantments.WitherEnchant;
-import CorruptPumpkin.First.Mod.Functionalities.CreeperHiss2;
 import CorruptPumpkin.First.Mod.Items.WITHER_SWORD;
 
 import corruptpumpkin.first.mod.Packets.JetPackFlyingPacket;
@@ -44,6 +44,7 @@ public class FirstMod implements ModInitializer {
 	);
 	public static final Item CREEPER_HEART = new CreeperHiss2(new Item.Settings().group(FirstMod.MISC_ADDON_GROUP).maxCount(1).rarity(Rarity.RARE));
 	public final Item WITHER_SWORD = new WITHER_SWORD(new Item.Settings().group(FirstMod.MISC_ADDON_GROUP).rarity(Rarity.EPIC));
+	//public final Item SNOWBALL_CANNON = new SnowBallCannonItem(EntityType.SNOWBALL, 44975, 7969893, new Item.Settings().group(ItemGroup.MISC));
 	public static final Item WITHER_BONE = new Item(new Item.Settings().group(FirstMod.MISC_ADDON_GROUP).rarity(Rarity.RARE));
 	private static final Identifier WITHER_SKELETON_LOOT_TABLE_ID = EntityType.WITHER_SKELETON.getLootTableId();
 
@@ -57,6 +58,7 @@ public class FirstMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("miscaddons", "creeper_heart"), CREEPER_HEART);
 		Registry.register(Registry.ITEM, new Identifier("miscaddons", "wither_sword"), WITHER_SWORD);
 		Registry.register(Registry.ITEM, new Identifier("miscaddons", "wither_bone"), WITHER_BONE);
+		//Registry.register(Registry.ITEM, new Identifier("miscaddons", "snowball_cannon"), SNOWBALL_CANNON);
 		JetPackFlyingPacket.registerPacket();
 		LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, table, setter) -> {
 			if (WITHER_SKELETON_LOOT_TABLE_ID.equals(id)) {
