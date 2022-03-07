@@ -43,7 +43,7 @@ public class BetterSnowBallEntity extends ThrownItemEntity {
         if (entity instanceof LivingEntity livingEntity) { // checks if entity is an instance of LivingEntity (meaning it is not a boat or minecart)
 
             livingEntity.addStatusEffect((new StatusEffectInstance(StatusEffects.SLOWNESS, 60, 3))); // applies a status effect
-            livingEntity.setInPowderSnow(true);
+
             livingEntity.playSound(SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, 2F, 5F); // plays a sound for the entity hit only
         }
     }
