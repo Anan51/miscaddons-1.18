@@ -18,21 +18,22 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class BetterSnowBallEntity extends ThrownItemEntity {
+
     public BetterSnowBallEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
-        super(entityType, world);
+        super(FirstMod.EnergyBoltEntityType, world);
     }
 
     public BetterSnowBallEntity(EntityType<? extends ThrownItemEntity> entityType, double d, double e, double f, World world) {
-        super(entityType, d, e, f, world);
+        super(FirstMod.EnergyBoltEntityType, d, e, f, world);
     }
 
-    public BetterSnowBallEntity(EntityType<? extends ThrownItemEntity> entityType, LivingEntity livingEntity, World world) {
-        super(entityType, livingEntity, world);
+    public BetterSnowBallEntity(LivingEntity livingEntity, World world) {
+        super(FirstMod.EnergyBoltEntityType, livingEntity, world);
     }
-
+    public int FreezeTime = 120;
     @Override
     protected Item getDefaultItem() {
-        return null;
+        return FirstMod.BETTER_SNOWBALL_ITEM;
 
     }
     protected void onEntityHit(EntityHitResult entityHitResult) { // called on entity hit.
@@ -44,6 +45,7 @@ public class BetterSnowBallEntity extends ThrownItemEntity {
 
             livingEntity.addStatusEffect((new StatusEffectInstance(StatusEffects.SLOWNESS, 60, 3))); // applies a status effect
 
+            livingEntity.setFrozenTicks(getMinFreezeDamageTicks() + (FreezeTime * 2));
             livingEntity.playSound(SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, 2F, 5F); // plays a sound for the entity hit only
         }
     }

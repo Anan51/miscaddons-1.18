@@ -20,6 +20,8 @@ public class FirstModClient implements ClientModInitializer {
     public void onInitializeClient() {
         EntityRendererRegistry.INSTANCE.register(FirstMod.EnergyBoltEntityType, FlyingItemEntityRenderer::new);
         receiveEntityPacket();
+        EntityRendererRegistry.INSTANCE.register(FirstMod.BetterSnowBallEntityType, FlyingItemEntityRenderer::new);
+        receiveEntityPacket();
     }
     public void receiveEntityPacket() {
         ClientSidePacketRegistry.INSTANCE.register(PacketID, (ctx, byteBuf) -> {

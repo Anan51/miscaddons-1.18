@@ -22,7 +22,7 @@ public class BetterSnowBallItem extends Item {
 		Optionally, you can add a cooldown to your item's right-click use, similar to Ender Pearls.
 		*/
         if (!world.isClient) {
-            EnergyBoltEntity energyBoltEntity = new EnergyBoltEntity(world, user);
+            BetterSnowBallEntity energyBoltEntity = new BetterSnowBallEntity(user, world);
             energyBoltEntity.setItem(itemStack);
             energyBoltEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 0F);
                         /*

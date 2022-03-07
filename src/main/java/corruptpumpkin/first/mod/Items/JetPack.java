@@ -1,11 +1,14 @@
 package corruptpumpkin.first.mod.Items;
 
+import corruptpumpkin.first.mod.Items.Projectiles.BetterSnowBallEntity;
 import corruptpumpkin.first.mod.Packets.JetPackFlyingPacket;
 import corruptpumpkin.first.mod.mixin.entities.LivingEntityAccessor;
 import io.netty.buffer.Unpooled;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.TntEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;

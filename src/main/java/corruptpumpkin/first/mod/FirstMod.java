@@ -3,6 +3,8 @@ import CorruptPumpkin.First.Mod.FirstModEnchantments.PoisonEnchant;
 import corruptpumpkin.first.mod.Functionalities.CreeperHiss2;
 import corruptpumpkin.first.mod.Functionalities.EnergyBallCannonItem;
 import corruptpumpkin.first.mod.Functionalities.SnowBallCannonItem;
+import corruptpumpkin.first.mod.Items.Projectiles.BetterSnowBallEntity;
+import corruptpumpkin.first.mod.Items.Projectiles.BetterSnowBallItem;
 import corruptpumpkin.first.mod.Items.Projectiles.EnergyBoltEntity;
 import corruptpumpkin.first.mod.Items.Projectiles.EnergyBoltItem;
 import corruptpumpkin.first.mod.Items.RegisterItems;
@@ -42,7 +44,14 @@ public class FirstMod implements ModInitializer {
 			FabricEntityTypeBuilder.<EnergyBoltEntity>create(SpawnGroup.MISC, EnergyBoltEntity::new)
 					.dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // dimensions in Minecraft units of the projectile
 					.trackRangeBlocks(4).trackedUpdateRate(10) // necessary for all thrown projectiles (as it prevents it from breaking, lol)
-					.build()); // VERY IMPORTANT DONT DELETE FOR THE LOVE OF GOD PSLSSSSSS
+					.build()); // VERY IMPORTANT DON'T DELETE FOR THE LOVE OF GOD PSLSSSSSS
+	public static final EntityType<BetterSnowBallEntity> BetterSnowBallEntityType = Registry.register(
+			Registry.ENTITY_TYPE,
+			new Identifier(ModID, "better_snow_ball"),
+			FabricEntityTypeBuilder.<BetterSnowBallEntity>create(SpawnGroup.MISC, BetterSnowBallEntity::new)
+					.dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // dimensions in Minecraft units of the projectile
+					.trackRangeBlocks(4).trackedUpdateRate(10) // necessary for all thrown projectiles (as it prevents it from breaking, lol)
+					.build()); // VERY IMPORTANT DON'T DELETE FOR THE LOVE OF GOD PSLSSSSSS
 	public static final ItemGroup MISC_ADDON_GROUP = new ItemGroup(1, "Misc_Addon_Group") {
 		@Override
 		public ItemStack createIcon() {
@@ -63,8 +72,10 @@ public class FirstMod implements ModInitializer {
 	public final Item WITHER_SWORD = new WITHER_SWORD(new Item.Settings().group(FirstMod.MISC_ADDON_GROUP).rarity(Rarity.EPIC));
 	public final Item SNOWBALL_CANNON = new SnowBallCannonItem(new Item.Settings().group(FirstMod.MISC_ADDON_GROUP).rarity(Rarity.EPIC).fireproof());
 	public final Item ENERGYBALL_CANNON = new EnergyBallCannonItem(new Item.Settings().group(FirstMod.MISC_ADDON_GROUP).rarity(Rarity.EPIC).fireproof());
+	public final Item BETTER_SNOWBALL_CANNON = new EnergyBallCannonItem(new Item.Settings().group(FirstMod.MISC_ADDON_GROUP).rarity(Rarity.EPIC).fireproof());
 	public static final Item WITHER_BONE = new Item(new Item.Settings().group(FirstMod.MISC_ADDON_GROUP).rarity(Rarity.RARE));
 	public static final Item ENERGY_BOLT_ITEM = new EnergyBoltItem(new Item.Settings().group(FirstMod.MISC_ADDON_GROUP).rarity(Rarity.RARE));
+	public static final Item BETTER_SNOWBALL_ITEM = new BetterSnowBallItem(new Item.Settings().group(FirstMod.MISC_ADDON_GROUP).rarity(Rarity.RARE));
 	private static final Identifier WITHER_SKELETON_LOOT_TABLE_ID = EntityType.WITHER_SKELETON.getLootTableId();
 
 	@Override
@@ -78,8 +89,10 @@ public class FirstMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("miscaddons", "wither_sword"), WITHER_SWORD);
 		Registry.register(Registry.ITEM, new Identifier("miscaddons", "wither_bone"), WITHER_BONE);
 		Registry.register(Registry.ITEM, new Identifier("miscaddons", "snowball_cannon"), SNOWBALL_CANNON);
+		Registry.register(Registry.ITEM, new Identifier("miscaddons", "better_snowball_cannon"), BETTER_SNOWBALL_CANNON);
 		Registry.register(Registry.ITEM, new Identifier("miscaddons", "energyball_cannon"), ENERGYBALL_CANNON);
 		Registry.register(Registry.ITEM, new Identifier("miscaddons", "energy_bolt_item"), ENERGY_BOLT_ITEM);
+		Registry.register(Registry.ITEM, new Identifier("miscaddons", "better_snowball_item"), BETTER_SNOWBALL_ITEM);
 		JetPackFlyingPacket.registerPacket();
 		LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, table, setter) -> {
 			if (WITHER_SKELETON_LOOT_TABLE_ID.equals(id)) {
